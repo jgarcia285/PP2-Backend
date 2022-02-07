@@ -1,0 +1,158 @@
+.fa {
+    padding: 5px;
+    font-size: 30px;
+    width: 40px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 100%;
+}
+
+.fa-instagram:hover {
+    color:#fff;
+}
+
+.fa-facebook {
+    background: #fff;
+    color: #0275d8;
+}
+
+.fa-instagram {
+background: radial-gradient(
+circle at 33% 100%,
+#fed373 4%,
+#f15245 30%,
+#d92e7f 62%,
+#9b36b7 85%,
+#515ecf
+    );
+color: #fff;
+}
+
+.productos{
+    text-decoration: none;
+    color: #000;
+}
+
+.btn:focus {
+    background-color: #0275d8;
+    color: #fff;
+}
+
+.card {
+    margin-bottom: 20px;
+    background: #ffffff;
+}
+
+.card:hover {
+    box-shadow: -2px -1px 15px -4px #000;
+    transition: 0.5s;
+}
+
+/*Dark Mode*/
+
+/*Switch para activar dark mode*/
+.switch {
+    background: orange;
+    border-radius: 1000px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none;
+}
+
+.switch span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background-color: none;
+    color: #ffffff;
+}
+
+.switch::after{
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background: #ffffff;
+    top: 0;
+    left: unset;
+    right: 0;
+    border-radius: 100px;
+    transition: .3s ease all;
+}
+
+.switch.active {
+    background: #343D5B;
+    color: #000000;
+}
+
+.switch.active::after{
+    right: unset;
+    left: 0;
+}
+
+/*Configuracion de colores con/sin dark mode*/
+.logo{
+    color:#000000;
+}
+
+.btn{
+    background-color: #35A0FD;
+    color: #ffffff;
+}
+
+.btn:hover{
+    box-shadow: -2px -1px 10px -4px #000;
+}
+
+body.dark-theme .btn{
+    background-color: #0275d8;
+    color: #ffffff;
+}
+
+body.dark-theme .btn:hover{
+    color: #000000;
+    box-shadow: -2px -1px 10px -4px #fff;
+}
+
+body.dark-theme .letras{
+    color: #ffffff;
+}
+
+body {
+    background-color: #ffffff;
+    transition: .3s ease all;
+}
+
+body.dark-theme {
+    background-color: #121212;
+    transition: .3s ease all;
+}
+
+.fondo {
+    background-color: #0275d8;
+}
+
+body.dark-theme .fondo{
+    background-color: #014179;
+}
+
+body.dark-theme .card{
+    background-color: #014179;
+}
+
+body.dark-theme .card:hover{
+    box-shadow: -2px -1px 15px -4px #fff;
+    transition: 0.5s;
+}
+
+.letras-card {
+    color: #000000;
+}
+
+body.dark-theme .letras-card{
+    color: #ffffff;
+}
