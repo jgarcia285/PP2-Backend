@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>HNK Tech</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../scripts/darkMode.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../assets/styles/style.css">
+</head>
+
+<body>
+
+
+  {{> navbar}}
+
+  <main class="form-login d-flex flex-wrap justify-content-center text-center mb-3">
+    <form id="form">
+      <div class="container py-3 fondo">
+      <h3 class="text-center text-light">Iniciar Sesion</h3><br>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="email" placeholder="Correo electronico">
+        <label for="email">Correo electronico</label>
+      </div><br>
+
+      <div class="form-floating">
+        <input type="password" class="form-control" id="pass" placeholder="Contraseña">
+        <label for="pass">Contraseña</label>
+      </div>
+      <br>
+      <div class="checkbox mb-3 text-light">
+        <label>
+          <input class="form-check-input bg-light border-0" type="checkbox" value="Recordarme"> Recordarme
+        </label>
+      </div>
+
+      <button class="w-100 btn btn-lg" id="enviar" type="button">Ingresar</button>
+      </div>
+    </form>
+  </main>
+
+  {{> footer}}
+</body>
+
+</html>

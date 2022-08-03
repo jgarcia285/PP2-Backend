@@ -1,10 +1,23 @@
 const express = require('express');
+const hbs = require('hbs');
+const path = require('path');
+
 
 class Server {
 
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
+
+        this.path = path;
+
+        this.hbs = hbs;
+        this.app.set('view engine', 'hbs');
+        hbs.registerPartials(path.join(__dirname, "../", "/views/partials"));
+
+        this.renderOptions = {
+            titulo: 'HNK Tech'
+        }
 
         //Middlewares: Funciones que siempre se van a ejecutar cuando levantemos nuestro sv
         this.middlewares();
@@ -13,37 +26,43 @@ class Server {
     }
 
     middlewares() {
-        this.app.use(express.static('public'))
+        this.app.use(express.static('public'));
     }
 
     routes() {
+
+        this.app.get('/', (req, res) => {
+            res.render('home', this.renderOptions);
+        });
+
         this.app.get('/carrito', (req, res) => {
-            res.sendFile('templates/carrito.html', { root: 'public' });
-        })
+            res.render('carrito', this.renderOptions);
+        });
 
         this.app.get('/catalogo', (req, res) => {
-            res.sendFile('templates/catalogo.html', { root: 'public' });
-        })
+            res.render('catalogo', this.renderOptions);
+        });
 
         this.app.get('/contacto', (req, res) => {
-            res.sendFile('templates/contacto.html', { root: 'public' });
-        })
+            res.render('contacto', this.renderOptions);
+        });
 
         this.app.get('/legales', (req, res) => {
-            res.sendFile('templates/legales.html', { root: 'public' });
-        })
+            res.render('legales', this.renderOptions);
+        });
 
         this.app.get('/login', (req, res) => {
-            res.sendFile('templates/login.html', { root: 'public' });
-        })
+            res.render('login', this.renderOptions);
+        });
 
         this.app.get('/nosotros', (req, res) => {
-            res.sendFile('templates/nosotros.html', { root: 'public' });
-        })
+            res.render('nosotros', this.renderOptions);
+        });
 
         this.app.get('/registro', (req, res) => {
-            res.sendFile('templates/registro.html', { root: 'public' });
-        })
+            res.render('registro', this.renderOptions);
+        });
+
     }
 
     listen() {
