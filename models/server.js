@@ -23,47 +23,12 @@ class Server {
     }
 
     middlewares() {
-
         this.app.use(cors());
         this.app.use(express.static('public'));
     }
 
     routes() {
-
-        this.app.use('/', require('../routes/user.routes'));
-
-        this.app.get('/', (req, res) => {
-            res.sendFile('index.html', { root: 'public' });
-        });
-
-        this.app.get('/carrito', (req, res) => {
-            res.sendFile('templates/carrito.html', { root: 'public' });
-        });
-
-        this.app.get('/catalogo', (req, res) => {
-            res.sendFile('templates/catalogo.html', { root: 'public' });
-        });
-
-        this.app.get('/contacto', (req, res) => {
-            res.sendFile('templates/contacto.html', { root: 'public' });
-        });
-
-        this.app.get('/legales', (req, res) => {
-            res.sendFile('templates/legales.html', { root: 'public' });
-        });
-
-        this.app.get('/login', (req, res) => {
-            res.sendFile('templates/login.html', { root: 'public' });
-        });
-
-        this.app.get('/nosotros', (req, res) => {
-            res.sendFile('templates/nosotros.html', { root: 'public' });
-        });
-
-        this.app.get('/registro', (req, res) => {
-            res.sendFile('templates/registro.html', { root: 'public' });
-        });
-
+        this.app.use('/', require('../routes/render.routes'));
     }
 
     listen() {
