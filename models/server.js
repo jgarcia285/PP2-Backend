@@ -33,35 +33,35 @@ class Server {
         this.app.use('/', require('../routes/user.routes'));
 
         this.app.get('/', (req, res) => {
-            res.render('home', this.renderOptions);
+            res.sendFile('index.html', { root: 'public' });
         });
 
         this.app.get('/carrito', (req, res) => {
-            res.render('carrito', this.renderOptions);
+            res.sendFile('templates/carrito.html', { root: 'public' });
         });
 
         this.app.get('/catalogo', (req, res) => {
-            res.render('catalogo', this.renderOptions);
+            res.sendFile('templates/catalogo.html', { root: 'public' });
         });
 
         this.app.get('/contacto', (req, res) => {
-            res.render('contacto', this.renderOptions);
+            res.sendFile('templates/contacto.html', { root: 'public' });
         });
 
         this.app.get('/legales', (req, res) => {
-            res.render('legales', this.renderOptions);
+            res.sendFile('templates/legales.html', { root: 'public' });
         });
 
         this.app.get('/login', (req, res) => {
-            res.render('login', this.renderOptions);
+            res.sendFile('templates/login.html', { root: 'public' });
         });
 
         this.app.get('/nosotros', (req, res) => {
-            res.render('nosotros', this.renderOptions);
+            res.sendFile('templates/nosotros.html', { root: 'public' });
         });
 
         this.app.get('/registro', (req, res) => {
-            res.render('registro', this.renderOptions);
+            res.sendFile('templates/registro.html', { root: 'public' });
         });
 
     }
