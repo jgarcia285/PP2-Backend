@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HNK Tech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../scripts/filtroCatalogo.js"></script>
+    <script type="text/javascript" src="../scripts/darkMode.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/styles/style.css">
+</head>
+
+<body>
+
+    {{> navbar}}
+
+    <main>
+
+        <h3 class="text-center text-primary">Catalogo de productos</h3><br>
+        <div class="container-fluid fs-5">
+            <div class="row">
+                <div class="px-4 col-sm-5 col-md-2">
+                    <p class="text-primary">Categorias</p>
+                    <ul class="list-unstyled">
+                        <div>
+                            <button type="button" class="btn my-1" id="todo">Todos los
+                                productos</button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn my-1" id="micro">Procesadores</button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn my-1" id="pvideo">Placas de video</button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn my-1" id="pmadre">Placas madre</button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn my-1" id="ram">Memorias RAM</button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn my-1" id="monitor">Monitores</button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn my-1" id="gabinete">Gabinetes</button>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col container-fluid text-center fs-5">
+                    <div class="row">
+                        <div class="micro col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Procesador Intel Core i5-9600K
+                                    <p class="productos letras-card">$29.999</p>
+                                    <img class="img-fluid" src="../assets/images/i5-9600K.png"
+                                        alt="Procesador Intel Core i5-9600K">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="micro col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Procesador Intel Core i7-9700K
+                                    <p class="productos letras-card">$42.999</p>
+                                    <img class="img-fluid" src="../assets/images/i7-9700K.png"
+                                        alt="Procesador Intel Core i7-9700K">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="pvideo col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Placa de video Nvidia GeForce GTX 1650
+                                    <p class="productos letras-card">$64.999</p>
+                                    <img class="img-fluid" src="../assets/images/1650.png"
+                                        alt="Placa de video Nvidia GeForce GTX 1650">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="pvideo col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Placa de video Nvidia GTX 1050 Ti
+                                    <p class="productos letras-card">$49.999</p>
+                                    <img class="img-fluid" src="../assets/images/1050ti.png"
+                                        alt="Placa de video Nvidia GTX 1050 Ti">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="micro col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Procesador AMD Ryzen 5 5600X
+                                    <p class="productos letras-card">$42.999</p>
+                                    <img class="img-fluid" src="../assets/images/ryzen-5600x.png"
+                                        alt="Procesador AMD Ryzen 5 5600X">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="pvideo col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Placa de video Nvidia GeForce GTX 1060
+                                    <p class="productos letras-card">$89.999</p>
+                                    <img class="img-fluid" src="../assets/images/1060.png"
+                                        alt="Placa de video Nvidia GeForce GTX 1060">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="pmadre col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Placa Madre Asus Prime A320m-k
+                                    <p class="productos letras-card">$6.900</p>
+                                    <img class="img-fluid" src="../assets/images/a320m-k.png"
+                                        alt="Placa Madre Asus Prime A320m-k">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="pmadre col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Placa Madre Asus Prime Z590-p
+                                    <p class="productos letras-card">$24.000</p>
+                                    <img class="img-fluid" src="../assets/images/z590-p.png"
+                                        alt="Placa Madre Asus Prime Z590-p">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="gabinete col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Gabinete Corsair Carbide
+                                    <p class="productos letras-card">$9.300</p>
+                                    <img class="img-fluid" src="../assets/images/gabinete_corsair.png"
+                                        alt="Gabinete Corsair Carbide">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="micro col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Procesador Intel Core i3-9100
+                                    <p class="productos letras-card">$21.999</p>
+                                    <img class="img-fluid" src="../assets/images/i3-9100.png"
+                                        alt="Procesador Intel Core i3-9100">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="ram col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Memoria RAM DDR4 8GB Kingston
+                                    <p class="productos letras-card">$5.4000</p>
+                                    <img class="img-fluid" src="../assets/images/ram_kingston.png"
+                                        alt="Memoria RAM DDR4 8GB Kingston">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="monitor col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Monitor Samsung 24 T350
+                                    <p class="productos letras-card">$24.890</p>
+                                    <img class="img-fluid" src="../assets/images/monitor_samsung.png"
+                                        alt="Monitor Samsung 24 T350">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="monitor col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Monitor BenQ GW2480
+                                    <p class="productos letras-card">$23.700</p>
+                                    <img class="img-fluid" src="../assets/images/monitor_benq.png" alt="Monitor BenQ GW2480">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="ram col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Memoria RAM Fury DDR4 8GB HyperX
+                                    <p class="productos letras-card">$6.400</p>
+                                    <img class="img-fluid" src="../assets/images/ram_fury.png"
+                                        alt="Memoria RAM Fury DDR4 8GB HyperX">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="gabinete col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Gabinete Tecware Nexus Blanco
+                                    <p class="productos letras-card">$8.890</p>
+                                    <img class="img-fluid" src="../assets/images/gabinete_tecware.png"
+                                        alt="Gabinete Tecware Nexus Blanco">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="ram col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Memoria RAM Vengeance 8GB Corsair
+                                    <p class="productos letras-card">$6.000</p>
+                                    <img class="img-fluid" src="../assets/images/ram_corsair.png"
+                                        alt="Memoria RAM Vengeance 8GB Corsair">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="monitor col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Monitor Dell E E2420H
+                                    <p class="productos letras-card">$21.900</p>
+                                    <img class="img-fluid" src="../assets/images/monitor_dell.png"
+                                        alt="Monitor Dell E E2420H">
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="gabinete col-6 col-md-3 col-sm-6">
+                            <div class="card border-2">
+                                <a class="productos letras-card" href="#">Gabinete Argb Xigmatek
+                                    <p class="productos letras-card">$8.100</p>
+                                    <img class="img-fluid" src="../assets/images/gabinete_argb.png"
+                                        alt="Gabinete Argb Xigmatek">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{> footer}}
+</body>
+
+</html>
