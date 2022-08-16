@@ -1,14 +1,17 @@
 const { Router } = require('express');
-const { check } = require('express-validator');
+//const { check } = require('express-validator');
 
-const { validate_fields } = require('../middlewares/validation_fields');
-const { validateRole, emailExists, userExistsById } = require('../helpers/db-validators');
+//const { validate_fields } = require('../middlewares/validation_fields');
+//const { validateRole, emailExists, userExistsById } = require('../helpers/db-validators');
 
 const router = Router();
 
 const { userPost,
-    userPut,
-    userDelete } = require('../controllers/user.controller');
+     } = require('../controllers/user.controller');
+
+router.post('/', userPost)
+
+/*
 
 router.post('/', [
     check('email', 'El correo no es valido').isEmail(),
@@ -31,6 +34,8 @@ router.delete('/:id', [
     check('id').custom(userExistsById),
     validate_fields
 ], userDelete)
+
+*/
 
 
 module.exports = router;

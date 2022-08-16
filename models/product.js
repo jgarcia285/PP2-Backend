@@ -6,13 +6,12 @@ const productSchema = Schema({
         required: [true, 'El nombre es obligatorio']
     },
     prize: {
-        type: String,
-        required: [true, 'El correo es obligatorio'],
-        unique: true
+        type: Number,
+        required: [true, 'El precio es obligatorio'],
     },
     category: {
         type: String,
-        required: [true, 'La contraseña es obligatoria']
+        required: [true, 'La categoria es obligatoria']
     },
     status: {
         type: Boolean,

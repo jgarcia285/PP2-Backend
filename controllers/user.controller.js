@@ -1,7 +1,21 @@
 const { response } = require('express');
-const bcryptjs = require('bcryptjs');
+//const bcryptjs = require('bcryptjs');
 
 const Usuario = require('../models/user');
+
+
+const userPost = async(req, res = response) => {
+
+    const { name, email, pass, role } = req.body;
+    const user = new Usuario({name, email, pass, role});
+
+    await user.save();
+
+    res.json(
+        user
+    )
+
+}
 
 /*
 const userGet = async (req, res = response) => {
@@ -25,8 +39,6 @@ const userGet = async (req, res = response) => {
         users
     });
 }
-
-*/
 
 const userPost = async (req, res) => {
 
@@ -76,9 +88,8 @@ const userDelete = async (req, res) => {
         user
     })
 }
+*/
 
 module.exports = {
-    userPost,
-    userPut,
-    userDelete
+    userPost
 }
