@@ -17,7 +17,8 @@ const userSchema = Schema({
     role: {
         type: String,
         required: true,
-        enum: ['ADMIN_ROLE', 'USER_ROLE']
+        enum: ['ADMIN_ROLE', 'USER_ROLE'],
+        default: 'USER_ROLE'
     },
     status: {
         type: Boolean,
@@ -28,7 +29,7 @@ const userSchema = Schema({
 //Sobreescribir el .toJSON para no mostrar la contraseña al agregar un usuario
 userSchema.methods.toJSON = function(){
 
-    const { __v, pass, ...user } = this.toObject()
+    const { __v, pass, role, status, ...user } = this.toObject()
     return user;
 
 }
