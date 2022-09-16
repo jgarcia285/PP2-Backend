@@ -12,10 +12,10 @@ class Server {
         this.userPath = '/api/users';
         this.productPath = '/api/products';
 
+        this.conectarDB();
+
         //Middlewares: Funciones que siempre se van a ejecutar cuando levantemos nuestro sv
         this.middlewares();
-
-        this.conectarDB();
 
         this.routes();
     }

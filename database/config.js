@@ -5,6 +5,8 @@ const dbConnection = async() => {
 
         const uri = process.env.MONGODB_CNN;
 
+        console.log(uri)
+
         await mongoose.connect (uri, {useNewUrlParser: true});
 
     } catch (error) {
