@@ -10,7 +10,7 @@ class Server {
         this.port = process.env.PORT;
 
         this.userPath = '/api/users';
-        this.productPath = '/api/products'
+        this.productPath = '/api/products';
 
         this.conectarDB();
 
