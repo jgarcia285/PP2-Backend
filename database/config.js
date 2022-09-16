@@ -3,7 +3,11 @@ const mongoose = require('mongoose');
 const dbConnection = async() => {
     try {
 
-        await mongoose.connect(process.env.MONGODB_CNN);
+        const uri = process.env.MONGODB_CNN;
+
+        console.log(typeof(uri));
+
+        await mongoose.connect(uri);
 
     } catch (error) {
         console.error(error);
