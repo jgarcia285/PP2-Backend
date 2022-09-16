@@ -26,6 +26,7 @@ const userSchema = Schema({
     }
 })
 
+
 //Sobreescribir el .toJSON para no mostrar la contraseña al agregar un usuario
 userSchema.methods.toJSON = function(){
 
