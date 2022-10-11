@@ -1,5 +1,6 @@
 const Usuario = require('../models/user')
 const Producto = require('../models/product')
+const Categoria = require('../models/category')
 
 const emailExists = async (email = '') => {
     const emailExists = await Usuario.findOne({ email });
@@ -8,6 +9,13 @@ const emailExists = async (email = '') => {
         throw new Error(`El correo ya está registrado`);
     }
 
+}
+
+const categoryExistsById = async (id) => {
+    const categoryExists = await Categoria.findById(id);
+    if(!categoryExists){
+        throw new Error('El id no existe');
+    }
 }
 
 const userExistsById = async (id) => {
@@ -28,8 +36,22 @@ const productExistsById = async (id) => {
 
 }
 
+const allowedCollections = (collection = '', collections = []) => {
+
+    const include = collections.includes(collection);
+
+    if(!include){
+        throw new Error(`La colleccion ${collection} no es permitida. Colleciones permitidas: ${collections}`);
+    }
+
+    return true;
+
+}
+
 module.exports = {
     emailExists,
     userExistsById,
-    productExistsById
+    productExistsById,
+    categoryExistsById,
+    allowedCollections
 };
