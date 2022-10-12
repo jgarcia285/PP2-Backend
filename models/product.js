@@ -26,7 +26,7 @@ const productSchema = Schema({
         type: Number,
         required: [true, 'La cantidad es obligatoria']
     },
-    description: { type: String},
+    description: { type: Array },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'Usuario',
