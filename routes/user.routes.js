@@ -24,7 +24,11 @@ router.put('/:id', [
     validate_fields
 ], userPut)
 
-router.get('/', userGet)
+router.get('/', [
+    validateJWT,
+    isAdminRole,
+    validate_fields
+], userGet)
 
 router.delete('/:id', [
     validateJWT,

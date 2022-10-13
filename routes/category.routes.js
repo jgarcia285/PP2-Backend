@@ -11,7 +11,11 @@ const { categoryExistsById } = require('../helpers/db-validators');
 const router = Router();
 
 //Obtener todas las categorias
-router.get('/', getCategories)
+router.get('/', [
+    validateJWT,
+    isAdminRole,
+    validate_fields
+], getCategories)
 
 //Obtener una categoria por id
 router.get('/:id', [
