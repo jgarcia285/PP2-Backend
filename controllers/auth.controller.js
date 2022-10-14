@@ -51,10 +51,19 @@ const login = async (req = request, res = response) => {
         })
     }
 
+}
+
+const logout = async (req = request, res) => {
+
+    res.clearCookie('connect.sid');
+    req.session.destroy();
+
+    res.json('Sesion cerrada');
 
 
 }
 
 module.exports = {
-    login
+    login,
+    logout
 }

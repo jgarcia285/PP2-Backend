@@ -10,11 +10,6 @@ class Server {
     constructor() {
         this.app = express();
         this.port = process.env.PORT || 3000;
-        this.app.use(session({
-            secret: '1231',
-            resave: true,
-            saveUninitialized: true
-        }))
 
         this.paths = {
             auth: '/api/auth',
@@ -46,6 +41,12 @@ class Server {
             tempFileDir : '/tmp/',
             createParentPath: true
         }));
+        this.app.use(session({
+            secret: '1231',
+            resave: true,
+            saveUninitialized: true,
+            cookie: { maxAge: 60000 }
+        }))
     }
 
     routes() {
