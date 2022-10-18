@@ -24,7 +24,7 @@ const userPost = async(req, res = response) => {
 const userPut = async (req, res = response) => {
 
     const { id } = req.params;
-    const { _id, pass, email, ...rest } = req.body;
+    const { _id, pass, ...rest } = req.body;
 
     if (pass) {
         const salt = bcryptjs.genSaltSync();
@@ -55,6 +55,15 @@ const userGet = async (req, res = response) => {
     });
 }
 
+const userGetById = async (req, res = response) => {
+
+    const { id } = req.params;
+    const user = await Usuario.findById(id)
+
+    res.json(user);
+
+}
+
 const userDelete = async (req, res) => {
 
     const { id } = req.params;
@@ -69,5 +78,6 @@ module.exports = {
     userPost,
     userPut,
     userGet,
+    userGetById,
     userDelete
 }
