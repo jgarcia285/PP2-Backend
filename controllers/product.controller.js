@@ -1,13 +1,16 @@
 const { response } = require('express');
 
 const Producto = require('../models/product');
+const Categoria = require('../models/category');
 
 const createProduct = async (req, res = response) => {
 
     const { status, user, ...body } = req.body;
     const name = req.body.name.toUpperCase();
+    const category = req.body.category.toUpperCase();
 
     const productDB = await Producto.findOne({ name });
+    const categoryDB = await Categoria.findOne({ category }).populate('name')
 
     if (productDB) {
         return res.status(400).json({
@@ -18,6 +21,7 @@ const createProduct = async (req, res = response) => {
     const data = {
         ...body,
         name: body.name.toUpperCase(),
+        category: categoryDB._id,
         user: req.user._id
     }
 

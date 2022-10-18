@@ -20,7 +20,7 @@ router.post('/', [
     check('name', 'El nombre es obligatorio').not().isEmpty(),
     check('prize', 'El precio es obligatorio').not().isEmpty(),
     check('stock', 'La cantidad es obligatoria').not().isEmpty(),
-    check('category', 'La categoria es obligatoria').isMongoId(),
+    check('category', 'La categoria es obligatoria').not().isEmpty(),
     check('category').custom(categoryExistsById),
     validate_fields
 ], createProduct)
