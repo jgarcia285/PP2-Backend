@@ -13,18 +13,6 @@ const emailExists = async (email = '') => {
 
 }
 
-/*
-const categoryExistsById = async (id) => {
-
-    const categoryExists = await Categoria.findById(id)
-
-    if (!categoryExists) {
-        throw new Error('La categoria no existe');
-    }
-}
-
-*/
-
 const categoryExistsById = async (category) => {
 
     const categoryExists = await Categoria.findOne({ category })
