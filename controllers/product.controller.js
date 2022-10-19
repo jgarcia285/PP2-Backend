@@ -68,7 +68,7 @@ const deleteProduct = async (req, res) => {
 
     const { id } = req.params;
 
-    const deletedProduct = await Producto.findByIdAndUpdate(id, { status: false });
+    const deletedProduct = await Producto.findByIdAndDelete(id);
 
     res.json({
         deletedProduct

@@ -5,8 +5,6 @@ const Categoria = require('../models/category')
 const emailExists = async (email = '') => {
     const emailExists = await Usuario.findOne({ email });
 
-    console.log(emailExists)
-
     if (emailExists) {
         throw new Error(`El correo ya está registrado`);
     }
@@ -16,8 +14,6 @@ const emailExists = async (email = '') => {
 const categoryExistsById = async (category) => {
 
     const categoryExists = await Categoria.findOne({ category })
-
-    console.log(categoryExists)
 
     if (!categoryExists) {
         throw new Error('La categoria no existe');

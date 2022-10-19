@@ -50,7 +50,7 @@ const deleteCategory = async (req, res = response) => {
 
     const { id } = req.params;
 
-    const deletedCategory = await Categoria.findByIdAndUpdate(id, { status: false });
+    const deletedCategory = await Categoria.findByIdAndDelete(id);
 
     res.json({
         deletedCategory
