@@ -16,9 +16,18 @@ const createProduct = async (req, res = response) => {
 
     categoryArr.forEach(element => {
         if(element.name === category){
+
+            console.log(element)
+
             categoryDB = element;
         }
     });
+
+    if (categoryDB === '') {
+        return res.status(400).json({
+            msg: `La categoria no es valida`
+        })
+    }
 
 
     if (productDB) {
