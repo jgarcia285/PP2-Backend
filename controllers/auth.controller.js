@@ -14,7 +14,7 @@ const login = async (req = request, res = response) => {
         const user = await Usuario.findOne({ email });
         if (!user) {
             return res.status(400).json({
-                msg: 'Correo / pass incorrectos'
+                msg: 'El correo no existe'
             })
         }
 
@@ -30,7 +30,7 @@ const login = async (req = request, res = response) => {
 
         if(!validPass){
             return res.status(400).json({
-                msg: 'Incorrect pass'
+                msg: 'Contraseña incorrecta'
             })
         }
 
@@ -45,7 +45,6 @@ const login = async (req = request, res = response) => {
         })
 
     } catch (error) {
-        console.log(error)
         return res.status(500).json({
             msg: 'Algo salió mal'
         })

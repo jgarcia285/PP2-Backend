@@ -21,6 +21,7 @@ router.post('/', [
 router.put('/:id', [
     check('id', 'No es un ID valido').isMongoId(),
     check('id').custom(userExistsById),
+    check('email').custom(emailExists),
     validate_fields
 ], userPut)
 

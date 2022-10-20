@@ -10,7 +10,16 @@ const createProduct = async (req, res = response) => {
     const category = req.body.category.toUpperCase();
 
     const productDB = await Producto.findOne({ name });
-    const categoryDB = await Categoria.findOne({ category }).populate('name')
+
+    let categoryArr = await Categoria.find({ category })
+    let categoryDB = '';
+
+    categoryArr.forEach(element => {
+        if(element.name === category){
+            categoryDB = element;
+        }
+    });
+
 
     if (productDB) {
         return res.status(400).json({
