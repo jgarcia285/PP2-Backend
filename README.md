@@ -1,1 +1,1 @@
-# Proyecto creado para practica profesionalizante 1 + agregado de modo oscuro
+# Proyecto creado para practica profesionalizante 1
